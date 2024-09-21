@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: webapp-db
+    env_file:
+      config.env
+    ports:
+      - "5433:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
